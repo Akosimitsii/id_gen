@@ -8,15 +8,23 @@ function generate() {
     let grade = document.getElementById('grade').value;
     let strand = document.getElementById('strand').value;
     let address = document.getElementById('address').value;
+    let cnum = document.getElementById('cnum').value;
+    let bday = document.getElementById('bday').value;
     let guardian = document.getElementById('guardian').value;
+    let guardian_num = document.getElementById('guardian_num').value;
+
 //alert('ok');
     let x = document.getElementById('fullname');
-    x.innerHTML = (lname + ", " + "<br/> " + fname + " " + mname + ".").toUpperCase();
+    x.innerHTML = ("<b>" + lname + ", " + "<br> " + fname + " " + mname + "."+ "</b>" ).toUpperCase();
 
     let y = document.getElementById('gr-sec');
-    y.innerHTML = (grade + "-" + section + "<br/> " + strand).toUpperCase();
+    y.innerHTML = (grade + "-" + section + "<br> " + strand).toUpperCase();
 
-    document.getElementById('stud_num').innerHTML = stud_num;
+    document.getElementById('stud_num').innerHTML = ("<b>" + stud_num + "</b>");
+
+    document.getElementById('contact_details').innerHTML = ("CONTACT NO.: " + cnum + "<br>" + "ADDRESS: " + address + "<br>" + "BIRTHDATE: " + bday).toUpperCase();
+
+    document.getElementById('guardian_name').innerHTML = ((guardian + "<br>" + guardian_num ).toUpperCase());
 
 		const player = document.getElementById('player');
 		const canvas = document.getElementById('canvas');

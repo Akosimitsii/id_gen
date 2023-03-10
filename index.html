@@ -12,85 +12,123 @@
 </head>
 <body  >
     <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-        <center>
-        <div class="bg-light m-5 p-3 w-100  rounded rounded-4 border border-2  border-primary-subtle ">
-            <h3>Student ID</h3>
-            
-                <input type="text" class="form-control" id="stud_id" name="stud_id" placeholder="Student ID No."   onkeyup="generate()"> 
-                <input type="text" class="form-control" id="lname" name="lname" placeholder="Lastname" >
-                <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name">
-                <input type="text" class="form-control" id="mname" name="mname" placeholder="Middle Initial" maxlength="1">
-                <input type="text" class="form-control" id="address" name="address" placeholder="Address">
-                <input type="text" class="form-control" id="guardian" name="guardian" placeholder="Guardian">
-                <select id="grade" class="form-control">
-                    <option value="">Select Section</option>
-                    <option value="11">Grade 11</option>
-                    <option value="12">Grade 12</option>        
-                </select>
-                <select id= "strand" class="form-control">
-                    <option value="">Select Strand</option>
-                    <option value="HUMSS">HUMSS</option>        
-                    <option value="STEM">STEM</option>        
-                    <option value="TVL-ICT">TVL-ICT</option>        
-                    <option value="ABM">ABM</option>        
-                </select>
-                <input type="text" class="form-control" id="section" name="section" placeholder="Section">
-
-                <video id="player"  width="145" height="145" autoplay></video>
-                <button id="capture" class="form-control" >Capture</button><br>
-
-                <button  class="btn btn-primary w-50" onclick="generate();">Submit</button>
-
-            
-        </div>
-        </center>
-        </div>
-        <div class="col-md-6">
+    <div class="border border-primary p-5 m-5 bg-primary-subtle">
+    <div class="row ">
+        <!-- COLUMN FOR FORM -->
+        <div class="col-md-6 "> 
             <center>
-                <div class=" text-center id-card m-5 p-3 rounded rounded-4 border border-dark-subtle" id="id-card" name="id-card" style="font-family:Century;">
-                    <style> 
-                    .id-card{
-                        background-image: url('id_temp.png'); 
-                        background-size: cover;
-                        height: 500px;
-                        width: 350px;
-                    } 
-                    </style>
-                    <br><br><br>
-                    <h6 id="hs" class=""><b>SENIOR HIGH SCHOOL</b><br><b>S.Y. 2022 - 2023</b></h6>
-                    <div id="id-pic" class="border border-dark" style="width:150px;height:150px;display: block;  margin-left: auto; margin-right: auto;">
-                       
-                     
-                    <canvas hidden  id="canvas" width="145" height="145"></canvas>
-                    <img src="" id="img" width="145" height="145" alt="no image"/>
+                <div class="bg-light p-3 w-100  rounded rounded-4 border border-2  border-primary-subtle ">
+                    <h3>Student ID</h3>            
+                        <input type="text" class="form-control" id="stud_id" name="stud_id" placeholder="Student ID No."   onkeyup="generate()"> 
+                        <input type="text" class="form-control" id="lname" name="lname" placeholder="Lastname" >
+                        <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name">
+                        <input type="text" class="form-control" id="mname" name="mname" placeholder="Middle Initial" maxlength="1">
+                        <input type="number" class="form-control" id="cnum" name="cnum" placeholder="Contact No.">
+                        <input type="date" class="form-control" id="bday" name="bday" placeholder="Birthday">               
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+                        <input type="text" class="form-control" id="guardian" name="guardian" placeholder="Guardian">
+                        <input type="text" class="form-control" id="guardian_num" name="guardian_num" placeholder="Contact No.">
+                        <select id="grade" class="form-control">
+                            <option value="">Select Section</option>
+                            <option value="11">Grade 11</option>
+                            <option value="12">Grade 12</option>        
+                        </select>
+                        <select id= "strand" class="form-control">
+                            <option value="">Select Strand</option>
+                            <option value="HUMSS">HUMSS</option>        
+                            <option value="STEM">STEM</option>        
+                            <option value="TVL-ICT">TVL-ICT</option>        
+                            <option value="ABM">ABM</option>        
+                        </select>
+                        <input type="text" class="form-control" id="section" name="section" placeholder="Section">
 
-                    </div>
-                    <p id="gr-sec">11 - AMANSINAYA</p>
-                    <b><p id="fullname"  style="font-size: 16pt; font-family:Century; background-color: yellow;">STUDENT NAME</p>
-                    <p id="stud_num" style="font-size: 16pt;"></p>
-                
+                        <video id="player"  width="145" height="145" autoplay></video>
+                        <button id="capture" class="form-control" >Capture</button><br>
 
+                        <button  class="btn btn-primary w-50" onclick="generate();">Submit</button>
+
+                    
                 </div>
-                 <button type="button" class="btn btn-primary" onclick="printContent('id-card');">Print</button>
-                 <script>
+            </center>
+        </div>
+
+        <!-- ID -->
+        <div class="col-md-6">
+            <div id="id-whole" class="row inline-flex border"  >
+                <!-- FRONT -->
+                <div class="col-md  " >
+                    
+                        <div class=" text-center id-card p-3 rounded rounded-4 border border-dark-subtle" id="id-card" name="id-card" style="font-family:Century;">
+                            <style> 
+                            .id-card{
+                                background-image: url('id_temp.png'); 
+                                background-size: cover;
+                                height: 3.375in;
+                                width: 2.125in;
+                            } 
+                            </style>
+                            <br><br>
+                            <h6 id="hs" style="font-size: small;">
+                                <b>SENIOR HIGH SCHOOL</b><br>
+                                <b>S.Y. 2022 - 2023</b>
+                            </h6>
+                            <div id="id-pic" style="width: 80px;height: 80px;margin-left: auto; margin-right: auto;">
+                                <canvas hidden  id="canvas" width="79" height="79"></canvas>
+                                <img src="" id="img" width="79" height="79" alt="capture image" class="border border-dark" />
+                            </div>
+                            <p id="gr-sec"  style="font-size: small;">
+                                GRADE - SECTION
+                            </p>                        
+                                <p id="fullname"  style="font-size: small; font-family:Century; background-color: yellow;"> STUDENT NAME</p>
+                            <p id="stud_num" style="font-size:medium">STUD_NO.</p>
+                        </div>
+                    
+                </div>
+                <!--  BACK -->
+                <div class=" col-md   ">
+
+                        <div class=" text-start id-card-bk  p-3 rounded rounded-4 border border-dark-subtle" id="id-card-bk" name="id-card-bk" style="font-family:Century;">
+                            <style> 
+                            .id-card-bk{
+                                background-image: url('id_back.png'); 
+                                background-size: cover;
+                                height: 3.375in;
+                                width: 2.125in;
+                            } 
+                            </style>
+                            <p id="contact_details" style="font-size: xx-small;"></p>
+                            <br>
+                            <p id="guardian_name" style="font-size: xx-small;"></p>
+                        </div>
+                </div>
+            </div><br><br>
+            <div class="row border ">
+                 <!-- Print buttons -->
+                <button type="button" class="btn btn-primary w-25 mx-auto" onclick="printContent('id-card');">Print Front</button>
+                <script>
                     function printContent(el){
                     var restorepage = $('body').html();
                     var printcontent = $('#' + el).clone();
                     $('body').empty().html(printcontent);
                     window.print();
                     $('body').html(restorepage);
-
-                   
-                  
                     }
                 </script>
-                <button id="check" name="check" onclick="check();">check</button>
-                    
-            </center>    
-       
+
+                <button type="button" class="btn btn-primary w-25 mx-auto" onclick="printContent('id-card-bk');">Print Back</button>
+                <script>
+                    function printContent(el){
+                    var restorepage = $('body').html();
+                    var printcontent = $('#' + el).clone();
+                    $('body').empty().html(printcontent);
+                    window.print();
+                    $('body').html(restorepage);
+                    }
+                </script>
+            </div>
         </div>
+       
+    </div>
     </div>
     </div>
 <script src="index.js">  </script>
